@@ -2,7 +2,7 @@
 using extension_method;
 
 
- string sentence = "Hello, world! This is a test.";
+        string sentence = "Hello, world! This is a test.";
         int wordCount = sentence.WordCount();
         Console.WriteLine($"Word count: {wordCount}"); // Output: Word count: 6
 

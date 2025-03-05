@@ -12,3 +12,4 @@ E:\GitHub Project\dotnetprojects\web\extension-method\obj\Debug\net9.0\refint\ex
 E:\GitHub Project\dotnetprojects\web\extension-method\obj\Debug\net9.0\extension-method.pdb
 E:\GitHub Project\dotnetprojects\web\extension-method\obj\Debug\net9.0\extension-method.genruntimeconfig.cache
 E:\GitHub Project\dotnetprojects\web\extension-method\obj\Debug\net9.0\ref\extension-method.dll
+E:\GitHub Project\dotnetprojects\web\extension-method\obj\Debug\net9.0\extension-method.sourcelink.json
