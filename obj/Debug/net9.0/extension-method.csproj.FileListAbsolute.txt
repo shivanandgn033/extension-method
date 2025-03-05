@@ -1,0 +1,14 @@
+E:\GitHub Project\dotnetprojects\web\extension-method\bin\Debug\net9.0\extension-method.exe
+E:\GitHub Project\dotnetprojects\web\extension-method\bin\Debug\net9.0\extension-method.deps.json
+E:\GitHub Project\dotnetprojects\web\extension-method\bin\Debug\net9.0\extension-method.runtimeconfig.json
+E:\GitHub Project\dotnetprojects\web\extension-method\bin\Debug\net9.0\extension-method.dll
+E:\GitHub Project\dotnetprojects\web\extension-method\bin\Debug\net9.0\extension-method.pdb
+E:\GitHub Project\dotnetprojects\web\extension-method\obj\Debug\net9.0\extension-method.GeneratedMSBuildEditorConfig.editorconfig
+E:\GitHub Project\dotnetprojects\web\extension-method\obj\Debug\net9.0\extension-method.AssemblyInfoInputs.cache
+E:\GitHub Project\dotnetprojects\web\extension-method\obj\Debug\net9.0\extension-method.AssemblyInfo.cs
+E:\GitHub Project\dotnetprojects\web\extension-method\obj\Debug\net9.0\extension-method.csproj.CoreCompileInputs.cache
+E:\GitHub Project\dotnetprojects\web\extension-method\obj\Debug\net9.0\extension-method.dll
+E:\GitHub Project\dotnetprojects\web\extension-method\obj\Debug\net9.0\refint\extension-method.dll
+E:\GitHub Project\dotnetprojects\web\extension-method\obj\Debug\net9.0\extension-method.pdb
+E:\GitHub Project\dotnetprojects\web\extension-method\obj\Debug\net9.0\extension-method.genruntimeconfig.cache
+E:\GitHub Project\dotnetprojects\web\extension-method\obj\Debug\net9.0\ref\extension-method.dll
