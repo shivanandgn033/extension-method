@@ -222,3 +222,103 @@ It uses the null-conditional operator to handle null objects.
 4 Readability: These extension methods can make your code more concise and easier to read.
 
 5 Use with Care: While these extensions are useful, avoid overusing them. If you find yourself adding a lot of object extensions, consider whether you should be creating more specific types or interfaces instead.
+
+#### Book class extension
+```C#
+
+using System;
+
+public class Book
+{
+    public string Title { get; set; }
+    public string Author { get; set; }
+    public int PublicationYear { get; set; }
+
+    public override string ToString()
+    {
+        return $"{Title} by {Author} ({PublicationYear})";
+    }
+}
+
+public static class BookExtensions
+{
+    // Extension method to check if a book is a modern book (published after 2000).
+    public static bool IsModern(this Book book)
+    {
+        return book.PublicationYear > 2000;
+    }
+
+    // Extension method to create a formatted string with additional information.
+    public static string GetFormattedInfo(this Book book, string additionalInfo)
+    {
+        return $"{book.ToString()} - {additionalInfo}";
+    }
+
+    //Extension method that returns a new book with an updated publication year.
+    public static Book WithUpdatedPublicationYear(this Book book, int newYear)
+    {
+        return new Book
+        {
+            Title = book.Title,
+            Author = book.Author,
+            PublicationYear = newYear
+        };
+    }
+}
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Book book1 = new Book { Title = "The Lord of the Rings", Author = "J.R.R. Tolkien", PublicationYear = 1954 };
+        Book book2 = new Book { Title = "The Hitchhiker's Guide to the Galaxy", Author = "Douglas Adams", PublicationYear = 1979 };
+        Book book3 = new Book { Title = "The Martian", Author = "Andy Weir", PublicationYear = 2011 };
+
+        Console.WriteLine($"{book1.Title} is modern: {book1.IsModern()}"); // Output: The Lord of the Rings is modern: False
+        Console.WriteLine($"{book3.Title} is modern: {book3.IsModern()}"); // Output: The Martian is modern: True
+
+        Console.WriteLine(book2.GetFormattedInfo("Science Fiction")); // Output: The Hitchhiker's Guide to the Galaxy by Douglas Adams (1979) - Science Fiction
+
+        Book book4 = book1.WithUpdatedPublicationYear(2024);
+        Console.WriteLine($"Original Book: {book1}"); //Output: Original Book: The Lord of the Rings by J.R.R. Tolkien (1954)
+        Console.WriteLine($"Updated Book: {book4}"); //Output: Updated Book: The Lord of the Rings by J.R.R. Tolkien (2024)
+    }
+}
+```
+### Explanation:
+
+1 Book Class:
+
+A simple custom class with properties for Title, Author, and PublicationYear.
+Overrides ToString() for a better string representation of the Book object.
+
+2 static class BookExtensions:
+
+Contains the extension methods for the Book class.
+
+3 public static bool IsModern(this Book book):
+
+Checks if a Book object's PublicationYear is after 2000.
+this Book book: Specifies that this is an extension method for the Book class.
+
+4 public static string GetFormattedInfo(this Book book, string additionalInfo):
+
+Creates a formatted string by combining the book's details with additional information.
+Demonstrates how extension methods can take additional parameters.
+
+5 public static Book WithUpdatedPublicationYear(this Book book, int newYear):
+
+Creates a new Book object with the same title and author as the original, but with a different publication year.
+This demonstrates that extension methods can also return new objects.
+
+#### Key Points:
+
+Custom Class Extensions: You can add extension methods to any custom class you create.
+
+Encapsulation: While extension methods add functionality, they don't violate encapsulation.
+
+Readability: Extension methods can improve the readability of your code by allowing you to write more expressive code.
+
+Immutability: The WithUpdatedPublicationYear method exemplifies a pattern of immutability. Instead of changing the original object, it creates a new one with the desired changes. 
+
+This is often a good practice, particularly in multithreaded environments.
