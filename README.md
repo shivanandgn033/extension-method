@@ -1,3 +1,5 @@
+### String Extensions
+
 ```C#
 
 using System;
@@ -106,7 +108,7 @@ static Class and Method: Essential for defining extension methods.
 
 This example demonstrates how extension methods can make your code more readable and maintainable by adding custom functionality to existing classes.
 
-
+### Object Extensions
 ```C#
 
 using System;
