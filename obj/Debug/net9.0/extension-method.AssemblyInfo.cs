@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("extension-method")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a44d899035144fdc8154d8b5a5d53bf9d73d759b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2e21a9b8dceaffae9bde94a34491085c329d5c55")]
 [assembly: System.Reflection.AssemblyProductAttribute("extension-method")]
 [assembly: System.Reflection.AssemblyTitleAttribute("extension-method")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -53,3 +53,19 @@ using extension_method;
         Console.WriteLine($"number type name: {number.GetTypeName()}"); //Output: number type name: Int32
 
         //......................................................................................................
+
+
+        Book book1 = new Book { Title = "The Lord of the Rings", Author = "J.R.R. Tolkien", PublicationYear = 1954 };
+        Book book2 = new Book { Title = "The Hitchhiker's Guide to the Galaxy", Author = "Douglas Adams", PublicationYear = 1979 };
+        Book book3 = new Book { Title = "The Martian", Author = "Andy Weir", PublicationYear = 2011 };
+
+        Console.WriteLine($"{book1.Title} is modern: {book1.IsModern()}"); // Output: The Lord of the Rings is modern: False
+        Console.WriteLine($"{book3.Title} is modern: {book3.IsModern()}"); // Output: The Martian is modern: True
+
+        Console.WriteLine(book2.GetFormattedInfo("Science Fiction")); // Output: The Hitchhiker's Guide to the Galaxy by Douglas Adams (1979) - Science Fiction
+
+        Book book4 = book1.WithUpdatedPublicationYear(2024);
+        Console.WriteLine($"Original Book: {book1}"); //Output: Original Book: The Lord of the Rings by J.R.R. Tolkien (1954)
+        Console.WriteLine($"Updated Book: {book4}"); //Output: Updated Book: The Lord of the Rings by J.R.R. Tolkien (2024)
+
+        //......................................................................................................
