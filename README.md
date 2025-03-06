@@ -105,3 +105,118 @@ this Keyword: Identifies the first parameter of an extension method as the type 
 static Class and Method: Essential for defining extension methods.
 
 This example demonstrates how extension methods can make your code more readable and maintainable by adding custom functionality to existing classes.
+
+
+```C#
+
+using System;
+
+public static class ObjectExtensions
+{
+    // Extension method to check if an object is null.
+    public static bool IsNull(this object obj)
+    {
+        return obj == null;
+    }
+
+    // Extension method to check if an object is not null.
+    public static bool IsNotNull(this object obj)
+    {
+        return obj != null;
+    }
+
+    // Extension method to safely get the string representation of an object.
+    public static string SafeToString(this object obj)
+    {
+        return obj?.ToString() ?? string.Empty; // Uses null-conditional and null-coalescing operators.
+    }
+
+    // Extension method to check if an object is of a specific type.
+    public static bool IsOfType<T>(this object obj)
+    {
+        return obj is T;
+    }
+
+    //Extension method that returns the type name of an object.
+    public static string GetTypeName(this object obj)
+    {
+        return obj?.GetType().Name ?? "null";
+    }
+}
+
+public class Person
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+}
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Person person = new Person { Name = "Alice", Age = 30 };
+        object nullObject = null;
+        object number = 123;
+        object text = "Hello";
+
+        Console.WriteLine($"person is null: {person.IsNull()}"); // Output: person is null: False
+        Console.WriteLine($"nullObject is null: {nullObject.IsNull()}"); // Output: nullObject is null: True
+
+        Console.WriteLine($"person is not null: {person.IsNotNull()}"); // Output: person is not null: True
+        Console.WriteLine($"nullObject is not null: {nullObject.IsNotNull()}"); // Output: nullObject is not null: False
+
+        Console.WriteLine($"person.SafeToString(): {person.SafeToString()}"); // Output: person.SafeToString(): Person
+        Console.WriteLine($"nullObject.SafeToString(): {nullObject.SafeToString()}"); // Output: nullObject.SafeToString():
+
+        Console.WriteLine($"person is Person: {person.IsOfType<Person>()}"); // Output: person is Person: True
+        Console.WriteLine($"number is int: {number.IsOfType<int>()}"); // Output: number is int: True
+        Console.WriteLine($"text is int: {text.IsOfType<int>()}"); //Output: text is int: False
+
+        Console.WriteLine($"person type name: {person.GetTypeName()}"); //Output: person type name: Person
+        Console.WriteLine($"nullObject type name: {nullObject.GetTypeName()}"); //Output: nullObject type name: null
+        Console.WriteLine($"number type name: {number.GetTypeName()}"); //Output: number type name: Int32
+    }
+}
+```
+### Explanation:
+
+1 static class ObjectExtensions:
+
+As before, extension methods must be in a static class.
+
+2 public static bool IsNull(this object obj):
+
+this object obj: This makes IsNull() an extension method for any object.
+It simply checks if the object is null.
+
+3 public static bool IsNotNull(this object obj):
+
+The opposite of IsNull().
+
+4 public static string SafeToString(this object obj):
+
+This is a safer way to get an object's string representation.
+obj?.ToString(): Uses the null-conditional operator (?.) to prevent a NullReferenceException if obj is null.
+?? string.Empty: Uses the null-coalescing operator (??) to return an empty string if obj is null.
+
+5 public static bool IsOfType<T>(this object obj):
+
+This generic extension method checks if an object is of a specific type T.
+It uses the is operator for type checking.
+
+6 public static string GetTypeName(this object obj):
+
+This extension method returns the type name of an object.
+It uses the null-conditional operator to handle null objects.
+
+#### Key Improvements and Considerations:
+
+1 Generality: These extensions work with any object, making them very versatile.
+
+2 Null Safety: The SafeToString() and GetTypeName methods handle null values gracefully.
+
+3 Type Checking: The IsOfType<T>() method provides a convenient way to check object types.
+
+4 Readability: These extension methods can make your code more concise and easier to read.
+
+5 Use with Care: While these extensions are useful, avoid overusing them. If you find yourself adding a lot of object extensions, consider whether you should be creating more specific types or interfaces instead.
