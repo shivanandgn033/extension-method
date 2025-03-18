@@ -1,3 +1,5 @@
+### Extensions method and usage in detail with an example
+
 ### String Extensions
 
 ```C#
